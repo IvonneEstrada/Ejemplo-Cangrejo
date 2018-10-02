@@ -19,6 +19,8 @@ public class CrabWorld extends greenfoot.World
         super(560, 560, 1); 
         Tiempo tiempo = new Tiempo();
         this.addObject(tiempo, 60, 20);
+        Vida vidas = new Vida();
+        this.addObject(vidas, 180, 20);
         prepare();
     }
 
