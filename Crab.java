@@ -20,6 +20,11 @@ public class Crab extends Actor
         vidas.setValue(3);
     }
     
+    protected void addedToWorld(World world)
+    {
+        world.addObject(vidas, 180, 20);
+    }
+    
     public void act() 
     {
         // Add your action code here.
@@ -39,9 +44,16 @@ public class Crab extends Actor
         }
         if(isTouching(Lobster.class))
         {
-            vidas.setValue( vidas.getValue() - 1);
-            setLocation(250, 250);
-            getWorldOfType(CrabWorld.class).accedeLangosta().setLocation(250,500);
+            if(vidas.getValue() == 0)
+            {
+                Greenfoot.stop();
+            }
+            else
+            {
+                vidas.setValue( vidas.getValue() - 1);
+                setLocation(250, 250);
+                getWorldOfType(CrabWorld.class).accedeLangosta().setLocation(250,500);
+            }
         }
     }    
 }
