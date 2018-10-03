@@ -26,7 +26,7 @@ public class Tiempo extends Actor
     //Se ejecuta al momento de agregar el objeto en el mundo
     protected void addedToWorld(World world)
     {
-        world.addObject(contador, 60, 20);
+        world.addObject(contador, 70, 20);
     }
     
     public void act() 
